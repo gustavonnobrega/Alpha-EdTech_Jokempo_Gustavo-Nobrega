@@ -68,27 +68,27 @@ input.onButtonPressed(Button.AB, function () {
     }
     if (machine_choice - user_choice == 0) {
         basic.showLeds(`
-            . . # . .
+            . . . . .
+            # # . # #
+            . . . . .
             . # # # .
-            # # # # #
-            . # # # .
-            . . # . .
+            . . . . .
             `)
     } else if (machine_choice - user_choice == 1 || machine_choice - user_choice == -2) {
         basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
+            . . . . .
+            . # . # .
+            . . . . .
+            . # # # .
+            # . . . #
             `)
     } else if (machine_choice - user_choice == -1 || machine_choice - user_choice == 2) {
         basic.showLeds(`
-            # # . . .
-            # # . # #
-            . . # . .
-            # # . # #
-            # # . . .
+            . . . . .
+            . # . # .
+            . . . . .
+            # . . . #
+            . # # # .
             `)
     } else {
         basic.showLeds(`
