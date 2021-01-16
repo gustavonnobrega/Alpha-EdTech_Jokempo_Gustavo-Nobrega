@@ -66,7 +66,7 @@ input.onButtonPressed(Button.AB, function () {
             # # . . .
             `)
     }
-    if (user_choice == 0 && machine_choice == 1) {
+    if (machine_choice - user_choice == 0) {
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -74,8 +74,7 @@ input.onButtonPressed(Button.AB, function () {
             . # # # .
             . . # . .
             `)
-        user_choice += 1
-    } else if (user_choice == 1) {
+    } else if (machine_choice - user_choice == 1 || machine_choice - user_choice == -2) {
         basic.showLeds(`
             # # # # #
             # # # # #
@@ -83,16 +82,23 @@ input.onButtonPressed(Button.AB, function () {
             # # # # #
             # # # # #
             `)
-        user_choice += 1
+    } else if (machine_choice - user_choice == -1 || machine_choice - user_choice == 2) {
+        basic.showLeds(`
+            # # . . .
+            # # . # #
+            . . # . .
+            # # . # #
+            # # . . .
+            `)
     } else {
         basic.showLeds(`
-            # # . . .
             # # . # #
-            . . # . .
+            # . . . .
             # # . # #
-            # # . . .
+            # . . # .
+            # # . # .
             `)
-        user_choice += -2
+        machine_choice = 0
     }
 })
 input.onButtonPressed(Button.B, function () {
@@ -127,7 +133,7 @@ input.onButtonPressed(Button.B, function () {
             `)
     } else {
         basic.showLeds(`
-            # # . # #
+            # # . # .
             # . . . .
             # # . # #
             # . . # .
